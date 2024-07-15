@@ -6,8 +6,9 @@ import matplotlib.pyplot as plt
 def maxwell_boltzmann(v, T):
     """Maxwellian distribution defined here:
     https://en.wikipedia.org/wiki/Maxwell%E2%80%93Boltzmann_distribution"""
-    factor = (m_p / (2 * np.pi * k * T))**(3/2)
-    return 4 * np.pi * v**2 * factor * np.exp(-m_p * v**2 / (2 * k * T))
+    m = 2 * m_p # hydrogen is diatomic
+    factor = (m / (2 * np.pi * k * T))**(3/2)
+    return 4 * np.pi * v**2 * factor * np.exp(-m * v**2 / (2 * k * T))
 
 
 speeds = np.loadtxt("speeds.txt")
