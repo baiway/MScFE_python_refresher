@@ -22,7 +22,7 @@ If you wish to run the solutions provided for each exercise, you need to ensure 
 
 **1. Clone this repository**
 ```sh
-git clone https://github.com/baiway/MScFE_python_refresher
+https://github.com/baiway/MScFE_python_refresher.git
 ```
 
 **2. Change into the project directory**
