@@ -20,22 +20,27 @@ If you have any questions about the exercises or spot any mistakes, feel free to
 ## Running the solutions
 If you wish to run the solutions provided for each exercise, you need to ensure you have the correct libraries installed. To do this, follow the instructions below.
 
-**1. Clone this repository**
+**1. Open up a terminal**
+- **macOS:** Open the Terminal app (press `⌘` + `Space` to open Spotlight, then search "Terminal").
+- **Debian-based Linux:** Open the Terminal app (press `Super` + `A` to open the Show Applications menu, then search "Terminal").
+- **Windows:** Open PowerShell (search for "PowerShell" in the start menu).
+
+**2. Clone this repository**
 ```sh
-https://github.com/baiway/MScFE_python_refresher.git
+git clone https://github.com/baiway/MScFE_python_refresher.git
 ```
 
-**2. Change into the project directory**
+**3. Change into the project directory**
 ```sh
 cd MScFe_python_refresher
 ```
 
-**3. Create a virtual environment.** If you'd like to learn more about the benefits of using virtual environments, watch [this video](https://www.youtube.com/watch?v=Y21OR1OPC9A).
+**4. Create a virtual environment.** If you'd like to learn more about the benefits of using virtual environments, watch [this video](https://www.youtube.com/watch?v=Y21OR1OPC9A).
 ```sh
 python3 -m venv .venv
 ```
 
-**4. Activate the virtual environment.**
+**5. Activate the virtual environment.**
 
 The command varies by operating system. On macOS or Linux, enter
 ```sh
@@ -47,7 +52,7 @@ If using PowerShell on Windows, enter
 .venv\Scripts\Activate.ps1
 ```
 
-**5. Install dependencies**
+**6. Install dependencies**
 ```sh
 pip3 install -r requirements.txt
 ```
