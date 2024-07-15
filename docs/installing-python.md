@@ -6,7 +6,7 @@ Before attempting any of these, test whether Python is already installed on your
 If the command is not recognised, proceed with one of the following options.
 
 ## macOS
-1. Open the Terminal app (`⌘` + `Space` to open Spotlight, then search "Terminal")
+1. Open the Terminal app (press `⌘` + `Space` to open Spotlight, then search "Terminal")
 
 2. Install [Homebrew](https://brew.sh/) (a package manager) with the command
 ```sh
