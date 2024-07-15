@@ -1,6 +1,8 @@
 # Exercise 2: estimating the temperature of a gas using SciPy's `curve_fit`
 The file `speeds.txt` contains a list of molecular speeds for a sample of hydrogen gas containing 10,000 molecules. Your task is to estimate the temperature of this gas based on the distribution of speeds. You may assume the molecules follow a Maxwell-Boltzmann distribution, where the probability distribution of speeds is given by
-$$ f(v) = \left[ \frac{m}{2\pi k_\text{B} T} 4\piv^2 \exp\left( -\frac{mv^2}{2k_\text{B} T} \right)\right]^{3/2} $$,
+$$
+f(v) = \left( \frac{m}{2\pi k_\text{B} T}\right)^{3/2} 4\pi v^2 \exp\left( -\frac{mv^2}{2k_\text{B} T} \right)
+$$
 where $m$ is the mass of a hydrogen molecule (diatomic!), $k_\text{B}$ is Boltzmann's constant, $T$ is the temperature in kelvin, $v$ is the molecular speed.
 
 <details>
@@ -42,6 +44,6 @@ where $m$ is the mass of a hydrogen molecule (diatomic!), $k_\text{B}$ is Boltzm
   ```txt
   temperature = (298.70 +/- 2.73) kelvin
   ```
-  ![Histogram with 50 bins showing the spread of molecular speeds in `speeds.txt`. A Maxwell-Boltzmann distribution with the calculated $T=299\:\text{K}$ is overplotted.](histogram.png)
+  ![Histogram with 50 bins showing the spread of molecular speeds in `speeds.txt`. A Maxwell-Boltzmann distribution with the calculated $T=299\:\text{K}$ is overplotted.](distribution.png)
   
 </details>
