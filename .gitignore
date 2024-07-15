@@ -1,0 +1,5 @@
+# Do not track virtual environment folder
+.venv
+
+# Do not track gen_data folder (originally used to generate data used in exercises)
+gen_data
