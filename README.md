@@ -1,10 +1,16 @@
-# Python exercises for MScFE
-Some Python programming exercises that illustrate the sort of techniques you will use in York's [MSc in Fusion Energy](https://www.york.ac.uk/study/postgraduate-taught/courses/msc-fusion-energy/) course. If you can do these (or if you can at least understand the solutions), you'll be fine with the course content. Each exercise is in a separate folder (also linked below). Ensure you download the relevant data file(s) for each exercise before you begin.
+# Python exercises for incoming MScFE students
+ This repository contains three Python programming exercises that illustrate the sort of techniques you will use in the University of York's [MSc in Fusion Energy](https://www.york.ac.uk/study/postgraduate-taught/courses/msc-fusion-energy/) course. These exercises were written by a former student and serve as a 'litmus test' for your preparedness. If you can do all three (or you can at least understand the solutions), you'll be fine with the course content. If not, you might want to brush up on your Python before the course starts.
+
+If you're completely new to Python, you may wish to start with e.g. [Codecademy's Python course](https://www.codecademy.com/learn/learn-python-3) first then come back to this later. Codecademy also have a ['Analyze Data with Python'](https://www.codecademy.com/learn/paths/analyze-data-with-python) course, which covers Python, NumPy, SciPy, Matplotlib (and using Jupyter Notebooks), which should set you up nicely to complete these exercises.
+
+Each exercise is in a separate folder (also linked below). Ensure you download the relevant data file(s) for each exercise before you begin. 
 - [Exercise 1](ex1/README.md)
 - [Exercise 2](ex2/README.md)
 - [Exercise 3](ex3/README.md)
 
 If you'd like to work through additional exercises, see https://lectures.scientific-python.org/
+
+If you have any questions about the exercises or spot any mistakes, feel free to email me: [bailey.cook@york.ac.uk](mailto:bailey.cook@york.ac.uk).
 
 ## Requirements
 - [Python 3](https://www.python.org/): to check whether you have Python 3 installed, type python3 --version into your terminal (or PowerShell on Windows). If Python is not installed, you can download it from python.org. You can find some concise guidance for installing Python [here](docs/installing-python.md).
