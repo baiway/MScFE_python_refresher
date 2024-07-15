@@ -15,7 +15,7 @@ If you have any questions about the exercises or spot any mistakes, feel free to
 ## Requirements
 - [Python 3](https://www.python.org/): to check whether you have Python 3 installed, type python3 --version into your terminal (or PowerShell on Windows). If Python is not installed, you can download it from python.org. You can find some concise guidance for installing Python [here](docs/installing-python.md).
 - [NumPy](https://numpy.org/), [SciPy](https://scipy.org/) and [Matplotlib](https://matplotlib.org/). These Python libraries are frequently used in scientific computing. They're completely free to download and use.
-- Optional: [Git](https://git-scm.com/). If you wish to clone this repository (see instructions below), you'll need to install Git. Instructions [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+- Optional: [Git](https://git-scm.com/). If you wish to clone this repository (see instructions below), you'll need to have Git installed on your computer. You can check if it's installed using `git --version`. If you don't already have it, follow the installation instructions [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
 ## Running the solutions
 If you wish to run the solutions provided for each exercise, you need to ensure you have the correct libraries installed. To do this, follow the instructions below.
