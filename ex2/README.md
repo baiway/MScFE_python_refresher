@@ -5,36 +5,85 @@ The file `speeds.txt` contains a list of molecular speeds for a sample of hydrog
 f(v) = \left( \frac{m}{2\pi k_\text{B}T}\right)^{3/2} 4\pi v^2 \exp\left(-\frac{mv^2}{2k_\text{B}T} \right)
 ```
 
-where $m$ is the mass of a hydrogen molecule (diatomic!), $k_\text{B}$ is Boltzmann's constant, $T$ is the temperature in kelvin, $v$ is the molecular speed.
+where $m$ is the mass of a hydrogen molecule (diatomic!), $k_\text{B}$ is Boltzmann's constant, $T$ is the gas temperature in kelvin, and $v$ is the molecular speed.
 
+If you're not sure where to start, click Hint \#1 below.
+
+## Hints
 <details>
-  <summary>Tip #1 (click me)</summary>
+  <summary>Hint #1 (click me)</summary>
   
-  Plot a histogram (use however many bins you like; I used 50).
+  This task involves curve fitting. I recommend [SciPy's `curve_fit`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html) function, but alternatives are available. The code below illustrates a common `curve_fit` pattern. 
+
+  <details>
+    <summary>`curve_fit` example</summary>
+
+    ```python
+    import numpy as np
+    from scipy.optimize import curve_fit
+    import matplotlib.pyplot as plt
+
+    def func(x, a, c):
+        """Parabola with equation y = a * x^2 + c."""
+        return a * x**2 + c
+
+    # Generate 10 x-coordinates over interval [-10, 10)
+    xdata = np.random.uniform(-10, 10, 10)
+
+    # Generate ydata that follows y = 0.5 * x^2 + 5 but with some noise
+    ydata = 0.5 * xdata**2 + 5 + np.random.normal(0, 0.5, size=xdata.size)
+
+    # Fit parabola defined in `func` to data. Here we're setting our guess
+    # for the parameters `a` and `c` to be 1 and 3 respectively
+    # (even though we know they're 0.5 and 5 respectively).
+    popt, pcov = curve_fit(f=func, xdata=xdata, ydata=ydata, p0=[1, 3])
+    afit, cfit = popt
+    aerr, cerr = np.sqrt(np.diag(pcov))
+
+    # Print fit parameters
+    print(f"a = {afit:.2f} +/- {aerr:.2f}")
+    print(f"c = {cfit:.2f} +/- {cerr:.2f}")
+
+    # Plot smooth fit using more points and parameters from curve_fit
+    x = np.linspace(-10, 10, 100)
+    yfit = func(x, afit, cfit)
+    plt.scatter(xdata, ydata, label="data")
+    plt.plot(x, yfit, label="fit", linestyle="dashed")
+    plt.legend()
+    plt.show()
+    ```
+    
+  </details>
+
+  Use the example above as a template to work through the exercise:
+  - The molecular speeds in `speeds.txt` will play the role of `xdata`
+  - You can define a function `maxwell-boltzmann` that takes two arguments, the molecular speed `v` and the gas temperature `T`, to replace `func`. Here `T` will be our fit parameter determined by `curve_fit`.
+  - For `ydata`, put the molecular speeds into bins using [NumPy's `histogram`](https://numpy.org/doc/stable/reference/generated/numpy.histogram.html) function. If you're not sure how to do this, click on Hint \#2.
+    ```
   
 </details>
 
 <details>
-  <summary>Tip #2 (click me)</summary>
+  <summary>Hint #2 (click me)</summary>
   
-  Fit a Maxwell-Boltzmann distribution to your histogram:
-
+  You can use [NumPy's `histogram`](https://numpy.org/doc/stable/reference/generated/numpy.histogram.html) function to produce a histogram.
   ```python
-  import numpy as np
-  from scipy.constants import k, m_p
-  from scipy.optimize import curve_fit
-
-  def maxwell_boltzmann(v, T):
-    factor = (m_p / (2 * np.pi * k * T))**(3/2)
-    return 4 * np.pi * v**2 * factor * np.exp(-m_p * v**2 / (2 * k * T))
-
-  # ...
-
   hist, bin_edges = np.histogram(speeds, bins=50, density=True)
-  bin_centers = (bin_edges[:-1] + bin_edges[1:]) / 2
+  bin_centres = (bin_edges[:-1] + bin_edges[1:]) / 2
+  ```
 
-  popt, pcov = curve_fit(f=maxwell_boltzmann, xdata=bin_centers, ydata=hist, p0=[300])
-  T_fit = popt[0]
+  You can now use replace `xdata` with `bin_centres` and `ydata` with `hist` in the template code above.
+
+  If you want to later plot the histogram, use the following snippet (alternatively use [Matplotlib's `hist`](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html) function).
+  ```python
+  import matplotlib.pyplot as plt
+  
+  plt.bar(bin_centres, hist, width=bin_edges[1] - bin_edges[0], label="histogram")
+  plt.xlabel("Speed (m/s)")
+  plt.ylabel("Probability density")
+  plt.legend()
+  plt.grid(True)
+  plt.show()
   ```
   
 </details>
