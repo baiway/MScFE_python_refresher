@@ -1,0 +1,2 @@
+mean reaction time = 0.25 seconds
+std. dev of reaction times = 0.05 seconds
