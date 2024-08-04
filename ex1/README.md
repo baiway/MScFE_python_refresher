@@ -8,7 +8,8 @@ The file `reaction_times.txt` contains a list of 400 reaction times. Your task i
   <summary>Click me!</summary>
   
   ```txt
-  avg. reaction time = (0.25 +/- 0.05) seconds
+  mean reaction time = 0.25 seconds
+  std. dev of reaction times = 0.05 seconds
   ```
   ![Histogram with 30 bins showing the spread of results in `reaction_times.txt`](histogram.png)
   
