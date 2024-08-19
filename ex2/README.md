@@ -54,7 +54,6 @@ If you're not sure where to start, click Hint \#1 below.
   - The molecular speeds in `speeds.txt` will play the role of `xdata`
   - You can define a function `maxwell-boltzmann` that takes two arguments, the molecular speed `v` and the gas temperature `T`, to replace `func`. Here `T` will be our fit parameter determined by `curve_fit`.
   - For `ydata`, put the molecular speeds into bins using [NumPy's `histogram`](https://numpy.org/doc/stable/reference/generated/numpy.histogram.html) function. If you're not sure how to do this, click on Hint \#2.
-    ```
   
 </details>
 
